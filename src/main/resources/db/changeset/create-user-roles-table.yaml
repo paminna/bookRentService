@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-roles #текстовый идентификатор (Обязателен)
+      author: Regina Nurgalieva # автор (Обязателен)
+      changes:
+        - createTable: # создаем новую таблицу
+            tableName: userroles
+            columns: # объявления колонок
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: user_id
+                  type: int
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: role_id
+                  type: int
+        - addUniqueConstraint:
+            columnNames: role_id, user_id
+            constraintName: key
+            tableName: userroles

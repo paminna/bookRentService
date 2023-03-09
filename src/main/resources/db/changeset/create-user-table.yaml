@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user #текстовый идентификатор (Обязателен)
+      author: Regina Nurgalieva # автор (Обязателен)
+      changes:
+        - createTable: # создаем новую таблицу
+            tableName: user
+            columns: # объявления колонок
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: login
+                  type: varchar
+              - column:
+                  name: password
+                  type: varchar
+              - column:
+                  name: rating
+                  type: int
+              - column:
+                  name: username
+                  type: varchar

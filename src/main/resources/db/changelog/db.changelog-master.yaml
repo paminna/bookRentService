@@ -1,0 +1,9 @@
+databaseChangeLog: #параметр в котором находятся миграции
+  - include:
+        file: ./db/changeset/create-user-roles-table.yaml
+  - include:
+      file: ./db/changeset/create-user-table.yaml
+  - include:
+      file: ./db/changeset/create-role-table.yaml
+  - include: # список активных миграций
+      file: ./db/changeset/create-book-table.yaml # путь к файлу миграции

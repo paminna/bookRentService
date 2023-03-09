@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-book #текстовый идентификатор (Обязателен)
+      author: Regina Nurgalieva # автор (Обязателен)
+      changes:
+        - createTable: # создаем новую таблицу
+            tableName: book
+            columns: # объявления колонок
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+              - column:
+                  name: author
+                  type: varchar
+              - column:
+                  name: rating
+                  type: varchar
+              - column:
+                  name: timetorent
+                  type: int
+              - column:
+                  name: user_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_book
+                    references: user(id)
